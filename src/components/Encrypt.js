@@ -9,8 +9,9 @@ function CaesarShift(str, num) {
             res += str[i];
             continue;
         }
-        
+        console.log(charcode)
         charcode = (str[i].charCodeAt()) + num;
+        console.log(charcode)
         if (num > 0) {
             if (str[i].charCodeAt() < 91 && charcode > 90) {
                 charcode -= 26;
@@ -20,7 +21,9 @@ function CaesarShift(str, num) {
             }
         } else {
             if (str[i].charCodeAt() < 64 && charcode > 65) {
+                console.log(charcode)
                 charcode += 26;
+                console.log(charcode)
             }
             else if (str[i].charCodeAt() < 96 && charcode > 97) {
                 charcode += 26;

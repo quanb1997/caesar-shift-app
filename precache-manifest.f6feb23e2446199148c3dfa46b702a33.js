@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "5143aa2cdcef0fe5f4ce",
+    "revision": "4896414280d3e3bd84b2",
     "url": "/caesar-shift-app/static/css/main.d047153c.chunk.css"
   },
   {
-    "revision": "5143aa2cdcef0fe5f4ce",
-    "url": "/caesar-shift-app/static/js/main.5143aa2c.chunk.js"
+    "revision": "4896414280d3e3bd84b2",
+    "url": "/caesar-shift-app/static/js/main.48964142.chunk.js"
   },
   {
     "revision": "935b0251a626769e024b",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/caesar-shift-app/static/js/runtime~main.48a188e1.js"
   },
   {
-    "revision": "5ce96ad356f8bec8e06b7121aca58271",
+    "revision": "cde7e82481b463ae94e34da51024889d",
     "url": "/caesar-shift-app/index.html"
   }
 ];

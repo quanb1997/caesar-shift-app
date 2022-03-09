@@ -12,10 +12,19 @@ function CaesarShift(str, num) {
         
         charcode = (str[i].charCodeAt()) + num;
         if (str[i].charCodeAt() < 91 && charcode > 90) {
-            charcode -= 26;
+            if (num > 0) {
+                charcode -= 26;
+            } else {
+                charcode += 26;
+            }
+            
         }
         if (str[i].charCodeAt() < 123 && charcode > 122) {
-            charcode -= 26;
+            if (num > 0) {
+                charcode -= 26;
+            } else {
+                charcode += 26;
+            }
         }
         res += String.fromCharCode(charcode);
     }

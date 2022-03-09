@@ -11,19 +11,19 @@ function CaesarShift(str, num) {
         }
         
         charcode = (str[i].charCodeAt()) + num;
-        if (str[i].charCodeAt() < 91 && charcode > 90) {
-            if (num > 0) {
+        if (num > 0) {
+            if (str[i].charCodeAt() < 91 && charcode > 90) {
                 charcode -= 26;
-            } else {
-                charcode += 26;
             }
-            
-        }
-        if (str[i].charCodeAt() < 123 && charcode > 122) {
-            if (num > 0) {
+            else if (str[i].charCodeAt() < 123 && charcode > 122) {
                 charcode -= 26;
-            } else {
-                charcode += 26;
+            }
+        } else {
+            if (str[i].charCodeAt() < 64 && charcode > 65) {
+                charcode -= 26;
+            }
+            else if (str[i].charCodeAt() < 96 && charcode > 97) {
+                charcode -= 26;
             }
         }
         res += String.fromCharCode(charcode);
@@ -51,6 +51,9 @@ const Encrypt = ( {onInput} ) => {
         {
             alert("shift must be a number");
             return false;
+        }
+        if(Number(shift) > 26 || Number(shift) < 1) {
+            alert('Please select a number between 1 and 26 to shift by')
         }
         if(red_text) {
             setBlackText(CaesarShift(red_text, Number(shift)))

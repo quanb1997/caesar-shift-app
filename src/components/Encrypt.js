@@ -14,21 +14,21 @@ function CaesarShift(str, num) {
         if (num > 0) {
             if (str[i].charCodeAt() < 91 && charcode > 90) {
                 charcode -= 26;
-                console.log(charcode)
+                
             }
             else if (str[i].charCodeAt() < 123 && charcode > 122) {
                 charcode -= 26;
-                console.log(charcode)
+                
             }
         } else if (num < 0) {
 
             if (str[i].charCodeAt() > 64 && charcode < 65) {
                 charcode += 26;
-                console.log(charcode)
+                
             }
             else if (str[i].charCodeAt() > 96 && charcode < 97) {
                 charcode += 26;
-                console.log(charcode)
+                
             }
         }
         res += String.fromCharCode(charcode);
@@ -58,12 +58,12 @@ const Encrypt = ( {onInput} ) => {
             alert("shift must be a number");
             return
         }
-        console.log(shift)
+        
         var final_shift = Number(shift)
         if(final_shift > 26 || final_shift < 1) {
             final_shift = final_shift % 26
         }
-        console.log(final_shift)
+        
         if(red_text) {
             setBlackText(CaesarShift(red_text, final_shift))
             setRedText('')
@@ -71,7 +71,7 @@ const Encrypt = ( {onInput} ) => {
             setRedText(CaesarShift(black_text, -1*final_shift))
             setBlackText('')
         }
-        console.log(red_text);
+        
         onInput({red_text, final_shift, black_text})
     }
 

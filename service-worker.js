@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/caesar-shift-app/precache-manifest.9e867f0c6d815b72ca10f6870ffc5961.js"
+  "/caesar-shift-app/precache-manifest.8d12e9fe1c8a460280e02f9dfe71e43c.js"
 );
 
 workbox.clientsClaim();

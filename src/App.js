@@ -5,7 +5,7 @@ import Encrypt from './components/Encrypt'
 function App() {
   return (
     <div className="container">
-        <Header subtitle = {"Quan"}/>
+        <Header subtitle = {"Encrypt and decrypt using the caesar shift"}/>
         <Encrypt onInput={doCaesarShift}/>
     </div>
   );

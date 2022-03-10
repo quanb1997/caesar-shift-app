@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types'
-import Subtitle from './Subtitle'
 import React from 'react'
 
 const Header = ( { title } , { subtitle }) => {
   return (
     <header>
         <h1>{title}</h1>
-        <Subtitle title="By Quan"/>
     </header>
   )
 }

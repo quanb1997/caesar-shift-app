@@ -5,15 +5,14 @@ import Encrypt from './components/Encrypt'
 function App() {
   return (
     <div className="container">
-        <Header subtitle = {"Encrypt and decrypt using the caesar shift"}/>
+        <Header title = "Caesar Shift Calculator" />
         <Encrypt onInput={doCaesarShift}/>
     </div>
   );
 }
 
-// Shift red text
-const doCaesarShift = (red_text, shift) => {
-  console.log(red_text);
+const doCaesarShift = (form_input) => {
+  console.log(form_input);
 }
 
 export default App;

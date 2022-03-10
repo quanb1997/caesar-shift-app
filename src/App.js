@@ -1,17 +1,31 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
 import Encrypt from './components/Encrypt'
+import Footer from './components/Footer' 
+import About from './components/About' 
 
 function App() {
   return (
-    <div className="container">
-        <Header title = "Caesar Shift Calculator" />
-        <Encrypt onInput={doCaesarShift}/>
-    </div>
+    <Router>
+      <div className="container">
+
+        <Routes>
+          <Route path='/' element = {
+            <>
+              <Header title = "Caesar Shift Calculator" />
+              <Encrypt onInput={readInput}/>
+            </>
+          }/>
+          <Route path='/about' element={<About />}/>
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
-const doCaesarShift = (form_input) => {
+const readInput = (form_input) => {
   console.log(form_input);
 }
 

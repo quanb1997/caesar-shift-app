@@ -8,7 +8,7 @@ const About = () => {
       <h4>Built by Quan Bui</h4>
       <h5><a href='https://en.wikipedia.org/wiki/Caesar_cipher'> More info on Caesar Cipher</a></h5>
       <h5><a href='https://github.com/quanb1997'>My Github</a></h5>
-      <Link to='/'>Go Back</Link>
+      <Link to='/caesar-shift-app'>Go Back</Link>
     </div>
   )
 }

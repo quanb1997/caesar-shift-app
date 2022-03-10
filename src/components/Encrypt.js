@@ -38,15 +38,15 @@ function CaesarShift(str, num) {
 }
 
 const Encrypt = ( {onInput} ) => {
-    const [red_text, setRedText] = useState('')
+    const [plain_text, setPlainText] = useState('')
     const [shift, setShift] = useState('')
-    const [black_text, setBlackText] = useState('')
+    const [encrypted_text, setEncryptedText] = useState('')
 
     const onShift = (e) => {
         e.preventDefault()
     
-        if(!red_text && !black_text) {
-            alert('Please add red text or black text')
+        if(!plain_text && !encrypted_text) {
+            alert('Please add plain text or encrypted text')
             return
         }
         if(!shift) {
@@ -64,26 +64,26 @@ const Encrypt = ( {onInput} ) => {
             final_shift = final_shift % 26
         }
         
-        if(red_text) {
-            setBlackText(CaesarShift(red_text, final_shift))
-            setRedText('')
-        } else if(black_text) {
-            setRedText(CaesarShift(black_text, -1*final_shift))
-            setBlackText('')
+        if(plain_text) {
+            setEncryptedText(CaesarShift(plain_text, final_shift))
+            setPlainText('')
+        } else if(encrypted_text) {
+            setPlainText(CaesarShift(encrypted_text, -1*final_shift))
+            setEncryptedText('')
         }
         
-        onInput({red_text, final_shift, black_text})
+        onInput({plain_text, final_shift, encrypted_text})
     }
 
     return (
         <form className='encrypter-form' onSubmit={onShift}>
             <div className='form-control'>
-                <label>Red Text (Text to shift)</label>
+                <label>Text to shift</label>
                 <input 
                     type='text' 
                     placeholder='Enter text to shift' 
-                    value={red_text}
-                    onChange={(e) => setRedText(e.target.value)}
+                    value={plain_text}
+                    onChange={(e) => setPlainText(e.target.value)}
                 />
             </div>
             <div className='form-control'>
@@ -96,12 +96,12 @@ const Encrypt = ( {onInput} ) => {
                 />
             </div>
             <div className='form-control'>
-                <label>Black Text (Shifted Text)</label>
+                <label>Shifted Text</label>
                 <input 
                     type='text' 
                     placeholder='Output will appear here' 
-                    value={black_text}
-                    onChange={(e) => setBlackText(e.target.value)}
+                    value={encrypted_text}
+                    onChange={(e) => setEncryptedText(e.target.value)}
                 />
             </div>
             <div className='form-control'>

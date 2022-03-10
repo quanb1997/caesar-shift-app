@@ -11,7 +11,7 @@ function App() {
       <div className="container">
 
         <Routes>
-          <Route path='/' element = {
+          <Route path='/caesar-shift-app' element = {
             <>
               <Header title = "Caesar Shift Calculator" />
               <Encrypt onInput={readInput}/>

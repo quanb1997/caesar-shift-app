@@ -9,24 +9,26 @@ function CaesarShift(str, num) {
             res += str[i];
             continue;
         }
-        console.log(charcode)
+
         charcode = (str[i].charCodeAt()) + num;
-        console.log(charcode)
         if (num > 0) {
             if (str[i].charCodeAt() < 91 && charcode > 90) {
                 charcode -= 26;
+                console.log(charcode)
             }
             else if (str[i].charCodeAt() < 123 && charcode > 122) {
                 charcode -= 26;
-            }
-        } else {
-            if (str[i].charCodeAt() < 64 && charcode > 65) {
                 console.log(charcode)
+            }
+        } else if (num < 0) {
+
+            if (str[i].charCodeAt() > 64 && charcode < 65) {
                 charcode += 26;
                 console.log(charcode)
             }
-            else if (str[i].charCodeAt() < 96 && charcode > 97) {
+            else if (str[i].charCodeAt() > 96 && charcode < 97) {
                 charcode += 26;
+                console.log(charcode)
             }
         }
         res += String.fromCharCode(charcode);
@@ -49,24 +51,28 @@ const Encrypt = ( {onInput} ) => {
         }
         if(!shift) {
             alert('Please select a number to shift by')
+            return
         }
         if (isNaN(shift)) 
         {
             alert("shift must be a number");
-            return false;
+            return
         }
-        if(Number(shift) > 26 || Number(shift) < 1) {
-            alert('Please select a number between 1 and 26 to shift by')
+        console.log(shift)
+        var final_shift = Number(shift)
+        if(final_shift > 26 || final_shift < 1) {
+            final_shift = final_shift % 26
         }
+        console.log(final_shift)
         if(red_text) {
-            setBlackText(CaesarShift(red_text, Number(shift)))
+            setBlackText(CaesarShift(red_text, final_shift))
             setRedText('')
         } else if(black_text) {
-            setRedText(CaesarShift(black_text, -1*Number(shift)))
+            setRedText(CaesarShift(black_text, -1*final_shift))
             setBlackText('')
         }
-        
-        onInput({red_text, shift, black_text})
+        console.log(red_text);
+        onInput({red_text, final_shift, black_text})
     }
 
     return (
